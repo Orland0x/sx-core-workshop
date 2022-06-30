@@ -948,10 +948,10 @@
     pino "^7.11.0"
     starknet "^3.7.0"
 
-"@snapshot-labs/sx@0.1.0-beta.5":
-  version "0.1.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@snapshot-labs/sx/-/sx-0.1.0-beta.5.tgz#b51db0e2e65e0ba6c4b8e22000c1c188a5eaa76d"
-  integrity sha512-bJR48aLuilruhRXdKQIyLQFnTfYUGZ608T2FLxK8fzDpbdUy0VbRlCicxX40jywTgHvKlE+uNbU/wzHNo9Df9w==
+"@snapshot-labs/sx@0.1.0-beta.6":
+  version "0.1.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@snapshot-labs/sx/-/sx-0.1.0-beta.6.tgz#7b4bada863b3a9bd433d9636bef66a1f0c5d062e"
+  integrity sha512-yGuXAQtIPZE4uVVsD8AMEFjSrvkCrMX1Lxcc+tY8CgwUtoli3BRxsu6OB2/LdWAVmMoXC/tyZS0yCL2m3Xdz5g==
   dependencies:
     "@ethereumjs/block" "^3.6.3"
     "@ethereumjs/common" "^2.6.5"

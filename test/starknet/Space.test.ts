@@ -2,17 +2,8 @@ import { expect } from 'chai';
 import { ethers } from 'hardhat';
 import { StarknetContract, Account } from 'hardhat/types';
 import { utils } from '@snapshot-labs/sx';
-// import { Choice } from '@snapshot-labs/sx/src/utils/choice';
-// import { SplitUint256 } from '@snapshot-labs/sx/src/utils/split-uint256';
 import { vanillaSetup } from '../shared/setup';
 import { PROPOSE_SELECTOR, VOTE_SELECTOR } from '../shared/constants';
-
-// const { SplitUint256 } = utils.splitUint256;
-// const { strToShortStringArr } = utils.strings;
-// const { getProposeCalldata, getVoteCalldata } = utils.encoding;
-// const { bytesToHex } = utils.bytes;
-
-
 
 describe('Space Testing', () => {
   // Contracts
@@ -45,12 +36,12 @@ describe('Space Testing', () => {
 
     ({ space, controller, vanillaAuthenticator, vanillaVotingStrategy, vanillaExecutionStrategy } =
       await vanillaSetup());
-    console.log(1);
-    executionHash = utils.bytes.bytesToHex(ethers.utils.randomBytes(32)); // Random 32 byte hash
+      
     metadataUri = utils.strings.strToShortStringArr(
       'Hello and welcome to Snapshot X. This is the future of governance.'
     );
     proposerEthAddress = ethers.Wallet.createRandom().address;
+
     spaceAddress = BigInt(space.address);
     usedVotingStrategies1 = [BigInt(vanillaVotingStrategy.address)];
     userVotingParamsAll1 = [[]];
