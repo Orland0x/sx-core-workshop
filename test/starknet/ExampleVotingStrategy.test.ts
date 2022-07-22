@@ -4,19 +4,19 @@ import { starknet, ethers } from 'hardhat';
 import { utils } from '@snapshot-labs/sx';
 
 async function setup() {
-  const vanillaVotingStrategyFactory = await starknet.getContractFactory(
-    './contracts/starknet/VotingStrategies/Vanilla.cairo'
+  const exampleVotingStrategyFactory = await starknet.getContractFactory(
+    './contracts/starknet/VotingStrategies/Example.cairo'
   );
-  const vanillaVotingStrategy = await vanillaVotingStrategyFactory.deploy();
+  const exampleVotingStrategy = await exampleVotingStrategyFactory.deploy({token_address: "0x0000000000000000000000000000000000000000"});
   return {
-    vanillaVotingStrategy: vanillaVotingStrategy as StarknetContract,
+    exampleVotingStrategy: exampleVotingStrategy as StarknetContract,
   };
 }
 
-describe('Snapshot X Vanilla Voting Strategy:', () => {
+describe('Example Voting Strategy:', () => {
   it('The voting strategy should return a voting power of 1', async () => {
-    const { vanillaVotingStrategy } = await setup();
-    const { voting_power: vp } = await vanillaVotingStrategy.call('get_voting_power', {
+    const { exampleVotingStrategy } = await setup();
+    const { voting_power: vp } = await exampleVotingStrategy.call('get_voting_power', {
       timestamp: 1,
       voter_address: { value: BigInt(ethers.Wallet.createRandom().address) },
       params: [],
